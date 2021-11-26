@@ -1,6 +1,6 @@
 
 # Load path
-$File = Get-ChildItem -Path "D:\Projects\SolanaArtDistrict\iCloudPhotos2\json" 
+$File = Get-ChildItem -Path "D:\Projects\...." 
 # Get number of files in directory
 $count = $file.Count
 # how many copies of $FILE do you want
@@ -17,13 +17,13 @@ for ($x = 0; $x -lt $count; $x++)
 
     for ($i = $n; $i -lt $howmany; $i++) {
         
-        Copy-Item $File[$x].FullName -destination "D:\Projects\SolanaArtDistrict\iCloudPhotos2\json\$i$ext"
+        Copy-Item $File[$x].FullName -destination "D:\Projects......n\$i$ext"
 
-        $contents = Get-Content -Path "D:\Projects\SolanaArtDistrict\iCloudPhotos2\json\$i$ext" -Raw
+        $contents = Get-Content -Path "D:\Projects\.....\$i$ext" -Raw
 
         if ($contents -match "0.png") {
             Write-Output "Y =" +$y
-            Set-Content -Value ($contents -replace "0.png", "$i.png" -replace "#1", "#$y")  -Path "D:\Projects\SolanaArtDistrict\iCloudPhotos2\json\$i$ext"
+            Set-Content -Value ($contents -replace "0.png", "$i.png" -replace "#1", "#$y")  -Path "D:\Projects\.....\$i$ext"
             $y++
         }
     }
